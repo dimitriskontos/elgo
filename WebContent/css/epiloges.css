@@ -1,0 +1,91 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17 Δεκ 2014, 10:31:50 πμ
+    Author     : Administrator
+*/
+#suggestions {
+    border :1px solid #000000;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding : 1px;
+    visibility: hidden;
+    z-index:100;
+    margin-left: auto;
+    margin-right: auto;
+    width:300px;
+    
+    
+    
+ 
+}
+.cssUserInput {
+  font-family      : verdana;
+  font-size        : 12pt;
+  font-weight      : bold;
+  width            : 92%;
+    
+    
+
+
+
+}
+
+#tef{
+    
+   
+    border: 1px solid;
+    border-collapse: collapse;
+    
+}
+#tef th {
+    background-color: green;
+    color: white;
+    text-align: center;
+    border: 1px solid;
+}
+#tef tr {
+   padding: 0px;
+   
+   
+}
+#tef td {
+   text-align: center;
+   font-size: small;
+   font-weight: bold;
+   border: 1px solid;
+   padding: 1px;
+}
+#d1{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+}
+
+
+#te1{
+    position:relative;
+    left:0px;
+    top:0px;
+    background-color: gold;
+}
+
+
+
+#ep1 {
+    background-color: teal;
+    
+}
+#ef1 {
+    background-color: chartreuse;
+    
+}
+#log1 {
+    
+    background-color:indianred;
+}

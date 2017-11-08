@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    
+    
+    <form-beans>
+        <form-bean name="epilogesForm" type="forms.epilogesForm"/>
+        <form-bean name="LoginForm" type="forms.LoginForm" />
+        <form-bean name="sxolikoForm" type="forms.sxolikoForm" />
+        <form-bean name="mathitesForm" type="forms.mathitesForm" />
+        <form-bean name="spoudesForm" type="forms.spoudesForm" />
+        <form-bean name="kathigitesForm" type="forms.kathigitesForm" />
+        <form-bean name="ep_orologioForm" type="forms.ep_orologioForm" />
+        <form-bean name="ep_parusiologioForm" type="forms.ep_parusiologioForm" />
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+         
+    </global-forwards>
+
+    <action-mappings>
+       <action path="/log_in" 
+                scope="session" 
+                type="org.apache.struts.actions.ForwardAction" 
+                validate="true"
+                name="LoginForm" 
+                parameter="/index.jsp"
+                input= "/index.jsp"
+                
+       />
+        
+        <action path="/logoff" 
+                scope="session"
+                type="org.apache.struts.actions.ForwardAction" 
+                validate="false"
+                name="LoginForm" 
+                parameter="/index.jsp"
+                input= "/index.jsp" 
+        />
+        
+        <action path="/login" 
+                name="LoginForm" 
+                scope="session" 
+                type="actions.loginaction"
+                validate="false"
+                input= "/index.jsp">
+                <forward name="regular" path="/view/login.jsp" />
+                <forward name="success" path="/view/lofoff.jsp"/>
+                
+       </action>
+       <action path="/kyria" 
+               scope="session" 
+               name="LoginForm"
+               type="actions.kyria" 
+               parameter="/index.jsp"
+               input= "/index.jsp"
+               validate="false">
+       </action>
+       
+       <action path="/efarmogi" type="actions.efarmogi" validate="false" scope="session" >
+           <forward name="failure1" path="/view/efarmogi.jsp" />
+           <forward name="keni2" path=".examples.tabs.body"/>
+           <forward name="keni0" path="/view/sxoliko.jsp"/>
+           <forward name="keni6" path="/view/sxolikoEdit.jsp"/>
+           <forward name="keni7" path="/view/mathites.jsp"/> 
+           <forward name="keni8" path="/view/progspoudon.jsp"/> 
+           <forward name="keni9" path="/view/kathigites.jsp"/>
+           <forward name="keni10" path="/view/kath_math.jsp"/>
+           <forward name="keni11" path="/view/orol_epas.jsp"/>
+           <forward name="keni12" path="/view/parus_epas.jsp"/>  
+       </action>
+       <action path="/epiloges"  type="actions.epiloges">
+       </action>
+       <action path="/menu" 
+               type="actions.menu">
+       </action>
+      
+       <action path="/sxoliko" 
+                scope="session" 
+                name="sxolikoForm"
+                validate="false"  
+                type="actions.sxoliko"
+        >
+       </action>
+       
+       <action path="/mathites" 
+                scope="session" 
+                name="mathitesForm"
+                validate="false"  
+                type="actions.mathites"
+        >
+       </action>
+       <action path="/kathigites" 
+                scope="session" 
+                name="kathigitesForm"
+                validate="false"  
+                type="actions.kathigites"
+        >
+       </action>
+       
+       <action path="/ep_orologio" 
+                scope="session" 
+                name="ep_orologioForm"
+                validate="false"  
+                type="actions.ep_orologio"
+        >
+       </action>
+       <action path="/ep_parusiologio" 
+                scope="session" 
+                name="ep_parusiologioForm"
+                validate="false"  
+                type="actions.ep_parusiologio"
+        >
+       </action>
+       
+       <action path="/allagi" 
+               type="actions.allagi"
+               scope="session"
+               
+       >
+       
+       </action>
+       <action path="/askname" 
+               type="actions.askname"
+               validate="false" 
+       >
+       </action>
+       <action path="/mathima" 
+               type="actions.mathima"
+               validate="false" 
+       >
+       </action>
+        
+        <action path="/prog_spoudon" 
+               type="actions.prog_spoudon"
+               validate="false"
+               name="spoudesForm"
+               scope="session" 
+       >
+       </action>
+             
+      
+       <action path="/katigoria" 
+               type="actions.katigoria"
+               validate="false" 
+       >
+       
+       </action>
+       
+       <action path="/enimerosis" 
+               type="actions.enimerosis"
+               validate="false" 
+       >
+       
+       </action>
+       
+       
+       
+       
+       
+   </action-mappings>
+    
+    <controller contentType="text/html;charset=UTF-8" processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
+
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>
