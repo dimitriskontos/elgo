@@ -1,9 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>elgo</groupId>
-  <artifactId>elgo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	<groupId>openshift</groupId>
+	<artifactId>elgo</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+    <url>http://maven.apache.org</url>
    <dependencies>
       <!-- http://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
       <dependency>
@@ -18,7 +19,7 @@
   
   <build>
     <sourceDirectory>src</sourceDirectory>
-    <finalName>ROOT</finalName>
+    <finalName>elgo</finalName>
     <resources>
       <resource>
         <directory>src</directory>
